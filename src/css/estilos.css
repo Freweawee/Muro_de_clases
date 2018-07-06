@@ -1,0 +1,56 @@
+nav {
+    background-color: #fdfd96 !important;
+}
+
+.brand-logo{
+    color: #232b2b !important;
+}
+
+.navlink {
+    color: #232b2b
+}
+
+.board {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.body {
+    width: 100%;
+}
+
+footer {
+    font-size: small;
+    background-color: #fdfd96 !important;
+}
+
+footer span {
+    color: #232b2b;
+}
+
+.aside {
+    background-color: lightgrey;
+    height: 100%;
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.no-bottom-margin-row {
+    margin-bottom:0px !important
+}
+
+.cardTitle {
+    font-style: italic;
+}
+
+.cardBody {
+    background-color: #D6EAEA !important;
+}
+
+.btn-primary {
+    background-color: #66b3b3 !important;
+}
