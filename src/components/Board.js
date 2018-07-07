@@ -6,13 +6,19 @@ export class Board extends React.Component {
 
     constructor() {
         super();
+        console.log("constructor")
         this.state = {
             clases: ""
         }
     }
 
     componentDidMount(){
+        console.log("mounted");
+        this.checkClases();
+        this.interval = setInterval(()=>this.checkClases(),10000);
+    }
 
+    checkClases(){
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -30,6 +36,7 @@ export class Board extends React.Component {
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send();
     }
+
 
     buildBoard(clases){
 
@@ -69,6 +76,7 @@ export class Board extends React.Component {
     render(){
         return(
             <div className="board">
+                {console.log("LOAD")}
                 {this.state.clases}
             </div>
         );
