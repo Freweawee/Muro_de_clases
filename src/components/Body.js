@@ -13,7 +13,10 @@ export class Body extends React.Component {
     }
 
     render(){
+        console.log("body")
+        console.log(this.props)
         return(
+
             <div className="body" >
                 <div className="row">
                     <div className="col-md-3">
@@ -21,7 +24,7 @@ export class Body extends React.Component {
                     </div>
                     <div className="col-md-6">
                         <br/>
-                        <Board/>
+                        <Board usuario={this.props.usuario} rut={this.props.rut}/>
                     </div>
                     <div className="col-md-3">
                         <AsideLeft/>

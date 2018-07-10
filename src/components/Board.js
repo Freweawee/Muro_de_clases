@@ -8,8 +8,11 @@ export class Board extends React.Component {
         super();
         console.log("constructor")
         this.state = {
+            board: "",
             clases: ""
         }
+
+
     }
 
     componentDidMount(){
@@ -22,26 +25,28 @@ export class Board extends React.Component {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-
-                var clases = JSON.parse(xmlhttp.responseText);
-                this.buildBoard(clases);
-                console.log(clases);
+                console.log(xmlhttp.responseText);
+                var classes = JSON.parse(xmlhttp.responseText);
+                this.setState({
+                    clases: classes
+                });
                 
             }else{
                 console.log(xmlhttp.status);
                 console.log(xmlhttp.readyState);
             }
         }.bind(this);
-        xmlhttp.open("POST","../server/getClases.php",true);
+        xmlhttp.open("POST","../server/gestionClase.php",true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send();
     }
 
 
-    buildBoard(clases){
+    buildBoard(){
 
         var board = [];
         var i = 0;
+        var clases = this.state.clases;
 
         for(i = 0; i<Object.keys(clases).length;i++){
 
@@ -56,6 +61,8 @@ export class Board extends React.Component {
                 <div className="row">
                     <div className="col-md-12">
                         <ClassCard
+                            usuario={this.props.usuario}
+                            rut={this.props.rut}
                             idclase={clases[i]['idClase']}
                             titulo={clases[i]['Titulo']}
                             materia={clases[i]['Materia']} 
@@ -68,16 +75,16 @@ export class Board extends React.Component {
             );
         }
 
-        this.setState({
-            clases: board
-        })
+        return board
     }
 
     render(){
+
         return(
             <div className="board">
-                {console.log("LOAD")}
-                {this.state.clases}
+                {console.log("Board")}
+                {console.log(this.props)}
+                {this.buildBoard()}
             </div>
         );
     }

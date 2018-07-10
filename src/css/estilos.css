@@ -1,5 +1,5 @@
 nav {
-    background-color: #fdfd96 !important;
+    background-color: #fff34a !important;
 }
 
 .brand-logo{
@@ -17,11 +17,12 @@ nav {
 
 .body {
     width: 100%;
+    background-color: #3fb0ac;
 }
 
 footer {
     font-size: small;
-    background-color: #fdfd96 !important;
+    background-color: #dddfd4 !important;
 }
 
 footer span {
@@ -29,7 +30,7 @@ footer span {
 }
 
 .aside {
-    background-color: lightgrey;
+    background-color: #173e43;
     height: 100%;
     width: 100%;
 }
@@ -52,5 +53,5 @@ footer span {
 }
 
 .btn-primary {
-    background-color: #66b3b3 !important;
+    background-color: #99cc99 !important;
 }

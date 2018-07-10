@@ -36,7 +36,7 @@
             );
         }
 
-
+        $Json_info = array_reverse($Json_info);
         echo json_encode($Json_info, JSON_PRETTY_PRINT);
         
     }catch(Exception $e){

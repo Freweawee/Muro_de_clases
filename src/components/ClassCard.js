@@ -3,9 +3,18 @@ import '../css/ClassCard.css';
 
 export class ClassCard extends React.Component {
 
+    Inscripcion(idclase) {
 
+        if(this.props.usuario!=""){
+            window.location.href = '../../Estudiante_Registra_Curso/dist/index.html?'+'idclase='+idclase;
+        }else{
+            alert("Por favor inicie Sesion antes de Inscribirse");
+        }
+        
+    }
 
     render(){
+        console.log("classcard");
         console.log(this.props);
         return(
             <div className="ClassCard card">
@@ -29,7 +38,7 @@ export class ClassCard extends React.Component {
                         </div>
                         <div className="row cardBody">
                             <div className="col-md-12">
-                                <button onClick={()=>window.location.href = '../../Estudiante_Registra_Curso/dist/index.html?'+'idclase='+this.props.idclase} className="btn btn-primary float-right">Inscripcion</button>
+                                <button onClick={()=>this.Inscripcion(this.props.idclase)} className="btn btn-primary float-right">Inscripcion</button>
                             </div>
                         </div>
                     </div>
