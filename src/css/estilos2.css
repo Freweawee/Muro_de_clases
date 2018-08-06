@@ -16,8 +16,9 @@ nav {
 }
 
 .body {
-    width: 100%;
     background-color: #3fb0ac;
+    width: 100%;
+    height: 100%;
 }
 
 footer {
@@ -48,14 +49,44 @@ footer span {
     font-style: italic;
 }
 
-.cardBody {
+.pCardBody {
     background-color: #D6EAEA !important;
 }
 
 .btn-primary {
-    background-color: #99cc99 !important;
+    background-color: #66b3b3 !important;
 }
 
-.titulo{
-    margin-left: 25vw;
+.pClassCard {
+    background-color: #99cccc;
+    width: 100%;
+    padding: 1vh 1vw;
+    margin: 1vh 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.materia {
+    font-style: italic;
+}
+
+.titulo {
+    font-size: large;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #dddfd4;
+}
+
+.page {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    background-color: #173e43;
 }

@@ -1,15 +1,7 @@
 import React from "react";
-import "../css/estilos.css";
+import "../../css/estilos2.css";
 
 export class Header extends React.Component {
-    
-    constructor(){
-        super();
-        this.state = {
-            usuario: "",
-            rut: ""
-        }
-    }
 
     closeSession(){
         this.props.cerrarSesion();
@@ -22,9 +14,6 @@ export class Header extends React.Component {
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="titulo">
-                    <h1>Muro de clases</h1>
-                </div>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">

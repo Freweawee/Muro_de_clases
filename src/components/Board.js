@@ -18,7 +18,11 @@ export class Board extends React.Component {
     componentDidMount(){
         console.log("mounted");
         this.checkClases();
-        this.interval = setInterval(()=>this.checkClases(),10000);
+        this.interval = setInterval(()=>this.checkClases(),7000);
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.interval);
     }
 
     checkClases(){
@@ -69,6 +73,7 @@ export class Board extends React.Component {
                             nombreT={clases[i]['NombreT'] +" "+clases[i]['ApellidosT']} 
                             pic={clases[i]['PerfilT']} 
                             descripcion={descripcion}
+                            change={this.props.change}
                         />
                     </div>
                 </div>
