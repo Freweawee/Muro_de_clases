@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/estilos2.css";
+import "../../css/RegistrarCurso.css";
 
 export class PresentationCard extends React.Component {
 
@@ -18,12 +18,11 @@ export class PresentationCard extends React.Component {
     }
 
     componentDidMount(){
+        console.log("clase "+this.props.idclase)
         this.getClase()
     }
 
     getClase() {
-        var params = new URLSearchParams(location.search.slice(1));
-        var idclase = params.get('idclase');
         
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
@@ -36,9 +35,9 @@ export class PresentationCard extends React.Component {
                 console.log(xmlhttp.readyState);
             }
         }.bind(this);
-        xmlhttp.open("POST","../server/gestionClase.php",true);
+        xmlhttp.open("POST","../server/RegistrarCurso/gestionClase.php",true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.send("idclase="+idclase);
+        xmlhttp.send("idclase="+this.props.idclase);
     }
 
     buildPresentationCard(clase) {
@@ -80,7 +79,7 @@ export class PresentationCard extends React.Component {
                 console.log(xmlhttp.readyState);
             }
         }.bind(this);
-        xmlhttp.open("POST","../server/gestionInscripcion.php",true);
+        xmlhttp.open("POST","../server/RegistrarCurso/gestionInscripcion.php",true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send("rut="+this.props.rut+"&idclase="+this.state.idclase);
     }
@@ -91,17 +90,17 @@ export class PresentationCard extends React.Component {
             <div className="card pClassCard">
                 <div className="row">
                     <div className="col-md-4 col-md-4">
-                        <img class="rounded img-thumbnail img-fluid align-middle" src={"../img/"+this.state.profilepic} alt=""/>
+                        <a href="#"><img class="rounded img-thumbnail img-fluid align-middle" src={"../img/"+this.state.profilepic} alt=""/></a>
                     </div>
                     <div className="col-md-4 col-md-8">
                         <div className="row">
                             <div className="col-md-12">
-                                <span className="titulo">{this.state.titulo}</span>
+                                <span className="">{this.state.titulo}</span>
                             </div>
                         </div>
                         <div className="row pCardBody">
                             <div className="col-md-12">
-                                <span className="titulo">Tutor: {this.state.nombreT}</span>
+                                <span className="">Tutor: {this.state.nombreT}</span>
                                 <br/>
                                 <span className="materia">{this.state.materia}</span>
                                 <div>

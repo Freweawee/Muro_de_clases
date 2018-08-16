@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/estilos2.css";
+import "../../css/RegistrarCurso.css";
 
 export class Header extends React.Component {
 
@@ -17,7 +17,7 @@ export class Header extends React.Component {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <a className="nav-link" href="#">{this.props.usuario}</a>
+                            <a className="nav-link" onClick={()=>this.props.cambiarvista(["to_perfilAlumno"])} href="#">{this.props.usuario}</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">Buscador</a>

@@ -32,7 +32,7 @@ export class RegistraCurso extends React.Component {
                 console.log(xmlhttp.readyState);
             }
         }.bind(this);
-        xmlhttp.open("POST","../server/checkSession.php",true);
+        xmlhttp.open("POST","../server/RegistrarCurso/checkSession.php",true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send();
     }
@@ -53,7 +53,7 @@ export class RegistraCurso extends React.Component {
                 console.log(xmlhttp.readyState);
             }
         }.bind(this);
-        xmlhttp.open("POST","../server/closeSession.php",true);
+        xmlhttp.open("POST","../server/RegistrarCurso/closeSession.php",true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send();
     }
@@ -61,8 +61,8 @@ export class RegistraCurso extends React.Component {
     render(){
         return(
             <div className="page">
-                <Header usuario={this.state.usuario} rut={this.state.rut} cerrarSesion={this.cerrarSesion}/>
-                <Body usuario={this.state.usuario} rut={this.state.rut}/>
+                <Header usuario={this.state.usuario} rut={this.state.rut} cambiarvista={this.props.cambiarvista} cerrarSesion={this.cerrarSesion}/>
+                <Body usuario={this.state.usuario} rut={this.state.rut} idclase={this.props.idclase}/>
                 <Footer/>
             </div>
         );
