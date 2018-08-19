@@ -1,7 +1,7 @@
 import React from 'react';
 import { Body } from './Body';
-import { Header } from './Header';
-import { Footer } from './Footer';
+import { Header } from '../componentes_genericos/Header';
+import { Footer } from '../componentes_genericos/Footer';
 
 export class RegistraCurso extends React.Component {
 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Muro } from './muro/Muro'
-import {RegistraCurso} from './registrar_curso/RegistraCurso';
-import {PerfilAlumno} from './perfil_alumno/PerfilAlumno'
+import { RegistraCurso } from './registrar_curso/RegistraCurso';
+import { AnuncioAlumno } from './anuncio_alumno/AnuncioAlumno'
+import { MuroAlumno } from './muro_alumno/MuroAlumno';
 
 
 class App extends Component {
@@ -36,9 +37,15 @@ class App extends Component {
             })
         }
 
-        if(params[0] == 'to_perfilAlumno'){
+        if(params[0] == 'to_muroAlumno'){
             this.setState({
                 active : 2
+            })
+        }
+
+        if(params[0] == 'to_anuncioAlumno'){
+            this.setState({
+                active : 3
             })
         }
         
@@ -100,8 +107,14 @@ class App extends Component {
                 break;
             case 2:
                 vista = <div>
-                            <PerfilAlumno usuario={this.state.usuario} rut={this.state.rut} cambiarvista={this.AlterarVista}/>
-                        </div>;
+                            <MuroAlumno usuario={this.state.usuario} rut={this.state.rut} cambiarvista={this.AlterarVista}/>
+                        </div>
+                break;
+            case 3:
+                vista = <div>
+                            <AnuncioAlumno usuario={this.state.usuario} rut={this.state.rut} cambiarvista={this.AlterarVista}/>
+                        </div>
+                break;
         }
 
         return vista;

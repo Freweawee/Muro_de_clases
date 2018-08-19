@@ -1,7 +1,7 @@
 import React from "react"
 import "../../css/RegistrarCurso.css";
 import { PresentationCard } from "./PresentationCard";
-import { AsideLeft } from "./AsideLeft";
+import { Aside } from "../componentes_genericos/Aside";
 
 export class Body extends React.Component {
 
@@ -10,14 +10,14 @@ export class Body extends React.Component {
             <div className="body">
                 <div className="row">
                     <div className="col-md-3">
-                        <AsideLeft/>
+                        <Aside/>
                     </div>
                     <div className="col-md-6">
                         <br/>
                         <PresentationCard usuario={this.props.usuario} rut={this.props.rut} idclase={this.props.idclase}/>
                     </div>
                     <div className="col-md-3">
-                        <AsideLeft/>
+                        <Aside/>
                     </div>
                 </div>
             </div>
