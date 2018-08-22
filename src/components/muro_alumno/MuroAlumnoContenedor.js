@@ -28,6 +28,7 @@ export class MuroAlumnoContenedor extends React.Component{
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 console.log('Hola'+xmlhttp.responseText);
                 var publicaciones = JSON.parse(xmlhttp.responseText);
+                console.log("publicaciones: ");
                 console.log(publicaciones);
                 this.setState({
                     publicaciones: publicaciones
@@ -59,6 +60,7 @@ export class MuroAlumnoContenedor extends React.Component{
                             usuario={this.props.usuario}
                             rut={this.props.rut}
                             publicacion = {this.state.publicaciones[i]}
+                            irDetalle={this.props.irDetalle}
                         />
                     </div>
                     <hr className="col-md-12"/>

@@ -27,5 +27,7 @@
             echo $respuesta;
             
             break;
+        case 'Buscar':
+            $respuesta = $publicacion->Buscar($_POST['idAnuncio']);
     }
 ?>

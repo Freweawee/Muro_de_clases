@@ -72,7 +72,7 @@ export class AnuncioAlumnoForm extends React.Component{
                     </div>
                     <div className="form-group">
                         <label htmlFor="inputMateria" >Descripcion: </label>
-                        <input name="descripcion" type="text" className="form-control" onChange={e => this.Change(e)} placeholder="Busco prodesor de calculo que este disponible los dias lunes y jueves desde las 17:00hrs hasta las 18:30hrs"/>
+                        <textarea name="descripcion" type="text" className="form-control" onChange={e => this.Change(e)} placeholder="Busco prodesor de calculo que este disponible los dias lunes y jueves desde las 17:00hrs hasta las 18:30hrs"/>
                     </div>
                     <br/>
                     <br/>

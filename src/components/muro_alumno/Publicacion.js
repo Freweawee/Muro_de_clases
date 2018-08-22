@@ -14,17 +14,17 @@ export class Publicacion extends React.Component {
             vista = <p>Cargando...</p>
         }else{
             vista = <div>
-                <div className="row">
-                    <div className="col-md 12">
-                        <h6><a href="#">{this.props.publicacion.titulo}</a></h6>
+                        <div className="row">
+                            <div className="col-md 12">
+                                <h6><a onClick={()=>this.props.irDetalle(this.props.publicacion)} href="#">{this.props.publicacion.titulo}</a></h6>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md 12">
+                                <h6>{this.props.publicacion.materia}</h6>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col-md 12">
-                        <h6>{this.props.publicacion.materia}</h6>
-                    </div>
-                </div>
-            </div>
         }
 
         return vista;

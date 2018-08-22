@@ -9,7 +9,7 @@ export class MuroAlumno extends React.Component{
         return(
             <div>
                 <Header usuario={this.props.usuario} rut={this.props.rut} cambiarvista={this.props.cambiarvista}/>
-                <Body usuario={this.props.usuario} rut={this.props.rut}/>
+                <Body usuario={this.props.usuario} rut={this.props.rut} irDetalle={this.props.irDetalle}/>
                 <Footer/>
             </div>
         );
